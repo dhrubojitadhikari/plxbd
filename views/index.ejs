@@ -1,0 +1,82 @@
+<%- include('partials/header') %>
+
+<div class="slider">
+    <div class="slider-container">
+        <% featuredContent.forEach(item => { %>
+            <div class="slider-item">
+                <img src="<%= item.backdropPath %>" alt="<%= item.title %>">
+                <div class="slider-content">
+                    <h2><%= item.title %></h2>
+                    <p><%= item.overview %></p>
+                    <a href="/watch/<%= item.id %>" class="btn btn-primary">Watch Now</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<section class="trending">
+    <h2>Trending Now</h2>
+    <div class="movie-grid">
+        <% trendingContent.forEach(item => { %>
+            <div class="movie-card">
+                <img src="<%= item.posterPath %>" alt="<%= item.title %>">
+                <div class="movie-info">
+                    <h3><%= item.title %></h3>
+                    <p><%= item.year %></p>
+                    <a href="/watch/<%= item.id %>" class="btn btn-primary">Watch</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<section class="latest-movies">
+    <h2>Latest Movies</h2>
+    <div class="movie-grid">
+        <% latestMovies.forEach(movie => { %>
+            <div class="movie-card">
+                <img src="<%= movie.posterPath %>" alt="<%= movie.title %>">
+                <div class="movie-info">
+                    <h3><%= movie.title %></h3>
+                    <p><%= movie.year %></p>
+                    <a href="/watch/<%= movie.id %>" class="btn btn-primary">Watch</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<section class="tv-series">
+    <h2>TV Series</h2>
+    <div class="movie-grid">
+        <% tvSeries.forEach(series => { %>
+            <div class="movie-card">
+                <img src="<%= series.posterPath %>" alt="<%= series.title %>">
+                <div class="movie-info">
+                    <h3><%= series.title %></h3>
+                    <p>Season <%= series.season %></p>
+                    <a href="/watch/<%= series.id %>" class="btn btn-primary">Watch</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<section class="anime">
+    <h2>Anime</h2>
+    <div class="movie-grid">
+        <% animeList.forEach(anime => { %>
+            <div class="movie-card">
+                <img src="<%= anime.posterPath %>" alt="<%= anime.title %>">
+                <div class="movie-info">
+                    <h3><%= anime.title %></h3>
+                    <p><%= anime.episodes %> Episodes</p>
+                    <a href="/watch/<%= anime.id %>" class="btn btn-primary">Watch</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</section>
+
+<%- include('partials/footer') %>
